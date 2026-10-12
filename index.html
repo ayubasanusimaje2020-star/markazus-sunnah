@@ -1,151 +1,1010 @@
 <!DOCTYPE html>
-<html lang="ha">
+<html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Markazus Sunnah Majen Wayya</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<style>
-body {
-    margin: 0;
-    font-family: Arial, sans-serif;
-    background: #f3f7f3;
-    color: #222;
-}
-header {
-    background: #075e36;
-    color: white;
-    text-align: center;
-    padding: 30px 12px;
-}
-header h1 {
-    font-size: 27px;
-}
-nav {
-    background: #064526;
-    padding: 14px 5px;
-    text-align: center;
-}
-nav a {
-    color: white;
-    text-decoration: none;
-    display: inline-block;
-    padding: 8px;
-}
-.hero {
-    text-align: center;
-    padding: 35px 18px;
-    background: white;
-}
-.hero h2 {
-    color: #075e36;
-}
-section {
-    margin: 15px;
-    padding: 20px;
-    background: white;
-    border-radius: 10px;
-}
-h2 {
-    color: #075e36;
-}
-.card {
-    background: #edf5ee;
-    padding: 15px;
-    margin: 12px 0;
-    border-radius: 8px;
-}
-.button {
-    display: inline-block;
-    background: #087b46;
-    color: white;
-    text-decoration: none;
-    padding: 12px 20px;
-    border-radius: 6px;
-}
-.arabic {
-    direction: rtl;
-    text-align: right;
-    font-size: 21px;
-    line-height: 1.9;
-}
-footer {
-    background: #064526;
-    color: white;
-    text-align: center;
-    padding: 20px;
-}
-</style>
+  <title>Markazus Sunnah Majen Wayya</title>
+
+  <style>
+    :root {
+      --green: #075e36;
+      --dark-green: #034326;
+      --light-green: #eaf5ed;
+      --gold: #e4bd59;
+      --white: #ffffff;
+      --text: #222222;
+      --gray: #f5f7f5;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      background: var(--gray);
+      color: var(--text);
+      line-height: 1.7;
+    }
+
+    header {
+      background: var(--green);
+      color: white;
+      text-align: center;
+      padding: 28px 16px;
+      border-bottom: 5px solid var(--gold);
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 30px;
+    }
+
+    header h2 {
+      margin: 5px 0;
+      font-size: 22px;
+    }
+
+    header p {
+      margin: 5px 0 0;
+    }
+
+    .arabic-title {
+      font-size: 30px;
+      direction: rtl;
+    }
+
+    nav {
+      background: var(--dark-green);
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 5px;
+      padding: 10px;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      padding: 9px 12px;
+      border-radius: 5px;
+    }
+
+    nav a:hover {
+      background: var(--green);
+    }
+
+    .language-bar {
+      background: white;
+      padding: 12px;
+      text-align: center;
+    }
+
+    select,
+    input,
+    button {
+      font: inherit;
+    }
+
+    .language-bar select {
+      padding: 8px 12px;
+      border: 1px solid #cccccc;
+      border-radius: 5px;
+    }
+
+    .hero {
+      background: linear-gradient(
+        rgba(3, 67, 38, 0.90),
+        rgba(3, 67, 38, 0.90)
+      );
+      color: white;
+      text-align: center;
+      padding: 55px 20px;
+    }
+
+    .hero h2 {
+      font-size: 30px;
+      margin: 0 0 10px;
+    }
+
+    .hero p {
+      max-width: 700px;
+      margin: 0 auto;
+    }
+
+    .container {
+      max-width: 1000px;
+      margin: auto;
+      padding: 20px;
+    }
+
+    section {
+      background: white;
+      margin: 22px 0;
+      padding: 25px;
+      border-radius: 10px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+    }
+
+    section h2 {
+      color: var(--green);
+      margin-top: 0;
+      border-bottom: 2px solid var(--light-green);
+      padding-bottom: 8px;
+    }
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 15px;
+    }
+
+    .card {
+      background: var(--light-green);
+      padding: 18px;
+      border-radius: 8px;
+    }
+
+    .card h3 {
+      margin-top: 0;
+      color: var(--green);
+    }
+
+    .registration-box {
+      max-width: 520px;
+      margin: auto;
+    }
+
+    .registration-box label {
+      display: block;
+      font-weight: bold;
+      margin: 12px 0 5px;
+    }
+
+    .registration-box input {
+      width: 100%;
+      padding: 12px;
+      border: 1px solid #bbbbbb;
+      border-radius: 5px;
+      background: white;
+    }
+
+    .primary-button,
+    .secondary-button {
+      border: none;
+      border-radius: 5px;
+      padding: 12px 18px;
+      margin-top: 15px;
+      cursor: pointer;
+      width: 100%;
+      color: white;
+      background: var(--green);
+      font-weight: bold;
+    }
+
+    .primary-button:hover,
+    .secondary-button:hover {
+      background: var(--dark-green);
+    }
+
+    .secondary-button {
+      background: #555555;
+    }
+
+    .switch-form {
+      text-align: center;
+      margin-top: 15px;
+    }
+
+    .switch-form button {
+      background: none;
+      border: none;
+      color: var(--green);
+      text-decoration: underline;
+      cursor: pointer;
+      font-weight: bold;
+    }
+
+    .message {
+      margin-top: 15px;
+      padding: 12px;
+      border-radius: 5px;
+      display: none;
+      overflow-wrap: anywhere;
+    }
+
+    .message.success {
+      display: block;
+      background: #e5f6e8;
+      color: #155724;
+    }
+
+    .message.error {
+      display: block;
+      background: #fdeaea;
+      color: #842029;
+    }
+
+    .hidden {
+      display: none !important;
+    }
+
+    .account-box {
+      background: var(--light-green);
+      border-radius: 8px;
+      padding: 18px;
+      text-align: center;
+    }
+
+    footer {
+      background: var(--dark-green);
+      color: white;
+      text-align: center;
+      padding: 25px 15px;
+      margin-top: 30px;
+    }
+
+    footer p {
+      margin: 5px 0;
+    }
+
+    body[dir="rtl"] {
+      text-align: right;
+    }
+
+    body[dir="rtl"] nav,
+    body[dir="rtl"] .language-bar {
+      text-align: center;
+    }
+
+    body[dir="rtl"] .registration-box input {
+      text-align: right;
+    }
+
+    @media (max-width: 600px) {
+      header h1 {
+        font-size: 25px;
+      }
+
+      header h2 {
+        font-size: 19px;
+      }
+
+      .hero h2 {
+        font-size: 25px;
+      }
+
+      section {
+        padding: 18px;
+      }
+
+      nav a {
+        padding: 7px 9px;
+        font-size: 14px;
+      }
+    }
+  </style>
 </head>
 
 <body>
 
-<header>
-<h1>مركز السنة مجن ويا</h1>
-<h2 style="color:white">Markazus Sunnah Majen Wayya</h2>
-<p>Cibiyar Koyar da Ilimin Musulunci</p>
-</header>
+  <header>
+    <div class="arabic-title">مركز السنة مجن ويا</div>
+    <h1>Markazus Sunnah Majen Wayya</h1>
+    <p data-i18n="subtitle">Islamic Learning and Guidance</p>
+  </header>
 
-<nav>
-<a href="#gida">Gida</a>
-<a href="#tafsiri">Tafsiri</a>
-<a href="#hadisi">Hadisi</a>
-<a href="#aqeeda">Aqeedah</a>
-<a href="#littattafai">Littattafai</a>
-</nav>
+  <div class="language-bar">
+    <label for="language" data-i18n="chooseLanguage">Choose Language:</label>
 
-<div class="hero" id="gida">
-<h2>Barka da Zuwa Markazus Sunnah</h2>
-<p>Mun yi maraba da kai zuwa cibiyar koyon ilimin Musulunci.</p>
-<p class="arabic">مرحباً بكم في مركز السنة مجن ويا</p>
-<p>Alƙur'ani da ingantacciyar Sunnah bisa fahimtar magabata na gari.</p>
-</div>
+    <select id="language">
+      <option value="en">English</option>
+      <option value="ha">Hausa</option>
+      <option value="ar">العربية</option>
+    </select>
+  </div>
 
-<section id="tafsiri">
-<h2>📖 Tafsirin Alƙur'ani</h2>
-<div class="card">
-<p class="arabic">تفسير القرآن الكريم</p>
-<p>Za a wallafa darussan tafsiri tare da bayanin malamai da nassoshin da suka dace.</p>
-</div>
-</section>
+  <nav>
+    <a href="#home" data-i18n="navHome">Home</a>
+    <a href="#registration" data-i18n="navRegister">Student Registration</a>
+    <a href="#quran" data-i18n="navQuran">Qur'an Tafsir</a>
+    <a href="#hadith" data-i18n="navHadith">Hadith</a>
+    <a href="#aqeedah" data-i18n="navAqeedah">Aqeedah</a>
+    <a href="#books" data-i18n="navBooks">Islamic Books</a>
+    <a href="#media" data-i18n="navMedia">Audio/Video</a>
+    <a href="#contact" data-i18n="navContact">Contact</a>
+  </nav>
 
-<section id="hadisi">
-<h2>📚 Hadisi</h2>
-<div class="card">
-<p class="arabic">السنة النبوية</p>
-<p>Karatu kan hadisai, ma'anarsu da bayanin malamai.</p>
-</div>
-</section>
+  <div class="hero" id="home">
+    <h2 data-i18n="welcome">Welcome to Markazus Sunnah Majen Wayya</h2>
+    <p data-i18n="welcomeText">
+      Learn the Qur'an, authentic Sunnah, Islamic beliefs and beneficial knowledge.
+    </p>
+  </div>
 
-<section id="aqeeda">
-<h2>🕌 Aqeedah da Tauhidi</h2>
-<div class="card">
-<p class="arabic">العقيدة والتوحيد</p>
-<p>Darussa kan Tauhidi da Aqeedah bisa Alƙur'ani da ingantacciyar Sunnah.</p>
-</div>
-</section>
+  <main class="container">
 
-<section id="littattafai">
-<h2>📕 Littattafan Musulunci</h2>
-<p class="arabic">الكتب الإسلامية</p>
-<p>A nan za a tattara littattafai da kayan karatu a Hausa da Larabci.</p>
-</section>
+    <section id="registration">
+      <h2 data-i18n="registrationTitle">Student Registration</h2>
 
-<section>
-<h2>🎧 Sauti da Bidiyo</h2>
-<p>Za a ƙara darussan sauti da bidiyo a wannan sashe.</p>
-</section>
+      <p data-i18n="registrationDescription">
+        Register with your full name, email address and password.
+        You will receive an email if email confirmation is enabled.
+      </p>
 
-<section>
-<h2>📱 Tuntube Mu</h2>
-<p>Markazus Sunnah Majen Wayya</p>
-<p>Majen Wayya, Charanchi LGA, Katsina State, Nigeria.</p>
-</section>
+      <div id="authForms" class="registration-box">
 
-<footer>
-<p>مركز السنة مجن ويا</p>
-<p>© 2026 Markazus Sunnah Majen Wayya</p>
-</footer>
+        <form id="signupForm">
+          <h3 data-i18n="createAccount">Create Student Account</h3>
+
+          <label for="fullName" data-i18n="fullName">Full Name</label>
+          <input
+            type="text"
+            id="fullName"
+            autocomplete="name"
+            required
+            minlength="2"
+            maxlength="100"
+            data-i18n-placeholder="namePlaceholder"
+            placeholder="Enter your full name"
+          >
+
+          <label for="signupEmail" data-i18n="email">Email Address</label>
+          <input
+            type="email"
+            id="signupEmail"
+            autocomplete="email"
+            required
+            maxlength="254"
+            placeholder="student@example.com"
+          >
+
+          <label for="signupPassword" data-i18n="password">Password</label>
+          <input
+            type="password"
+            id="signupPassword"
+            autocomplete="new-password"
+            required
+            minlength="8"
+            data-i18n-placeholder="passwordPlaceholder"
+            placeholder="At least 8 characters"
+          >
+
+          <button
+            type="submit"
+            class="primary-button"
+            id="signupButton"
+            data-i18n="registerButton"
+          >
+            Register
+          </button>
+
+          <div class="switch-form">
+            <span data-i18n="alreadyHaveAccount">Already have an account?</span>
+            <button type="button" id="showLogin" data-i18n="loginLink">
+              Login
+            </button>
+          </div>
+        </form>
+
+        <form id="loginForm" class="hidden">
+          <h3 data-i18n="loginTitle">Student Login</h3>
+
+          <label for="loginEmail" data-i18n="email">Email Address</label>
+          <input
+            type="email"
+            id="loginEmail"
+            autocomplete="email"
+            required
+            maxlength="254"
+            placeholder="student@example.com"
+          >
+
+          <label for="loginPassword" data-i18n="password">Password</label>
+          <input
+            type="password"
+            id="loginPassword"
+            autocomplete="current-password"
+            required
+          >
+
+          <button
+            type="submit"
+            class="primary-button"
+            id="loginButton"
+            data-i18n="loginButton"
+          >
+            Login
+          </button>
+
+          <div class="switch-form">
+            <span data-i18n="needAccount">Do not have an account?</span>
+            <button type="button" id="showSignup" data-i18n="registerLink">
+              Register
+            </button>
+          </div>
+        </form>
+
+        <div id="authMessage" class="message" role="status" aria-live="polite"></div>
+      </div>
+
+      <div id="accountPanel" class="account-box hidden">
+        <h3 data-i18n="accountTitle">Your Student Account</h3>
+        <p>
+          <strong data-i18n="studentName">Name:</strong>
+          <span id="accountName"></span>
+        </p>
+        <p>
+          <strong data-i18n="email">Email Address:</strong>
+          <span id="accountEmail"></span>
+        </p>
+        <p data-i18n="loggedInMessage">You are logged in successfully.</p>
+        <button
+          type="button"
+          class="secondary-button"
+          id="logoutButton"
+          data-i18n="logoutButton"
+        >
+          Logout
+        </button>
+        <div id="accountMessage" class="message" role="status" aria-live="polite"></div>
+      </div>
+    </section>
+
+    <section id="quran">
+      <h2 data-i18n="quranTitle">Qur'an Tafsir</h2>
+      <div class="cards">
+        <div class="card">
+          <h3 data-i18n="quranCard1">Qur'an Recitation</h3>
+          <p data-i18n="quranText1">
+            Learn to read the Holy Qur'an correctly.
+          </p>
+        </div>
+        <div class="card">
+          <h3 data-i18n="quranCard2">Tafsir</h3>
+          <p data-i18n="quranText2">
+            Study the meanings and explanations of Qur'anic verses.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section id="hadith">
+      <h2 data-i18n="hadithTitle">Hadith and Sunnah</h2>
+      <p data-i18n="hadithText">
+        Study authentic Prophetic traditions and learn how to apply the Sunnah
+        in everyday life.
+      </p>
+    </section>
+
+    <section id="aqeedah">
+      <h2 data-i18n="aqeedahTitle">Aqeedah and Tawheed</h2>
+      <p data-i18n="aqeedahText">
+        Learn the foundations of Islamic belief, Tawheed and the worship of Allah.
+      </p>
+    </section>
+
+    <section id="books">
+      <h2 data-i18n="booksTitle">Islamic Books</h2>
+      <p data-i18n="booksText">
+        Explore beneficial Islamic books covering Qur'an, Hadith, Fiqh,
+        Islamic manners and knowledge.
+      </p>
+    </section>
+
+    <section id="media">
+      <h2 data-i18n="mediaTitle">Audio and Video</h2>
+      <p data-i18n="mediaText">
+        Audio lessons, Qur'an recitations and educational videos can be added here.
+      </p>
+    </section>
+
+    <section id="contact">
+      <h2 data-i18n="contactTitle">Contact Us</h2>
+      <p>
+        <strong data-i18n="addressLabel">Address:</strong>
+        <span data-i18n="address">
+          Majen Wayya, Charanchi LGA, Katsina State, Nigeria
+        </span>
+      </p>
+    </section>
+
+  </main>
+
+  <footer>
+    <p>مركز السنة مجن ويا</p>
+    <p>Markazus Sunnah Majen Wayya</p>
+    <p data-i18n="footerText">Islamic Learning and Guidance</p>
+    <p>&copy; <span id="year"></span> Markazus Sunnah Majen Wayya</p>
+  </footer>
+
+  <script type="module">
+    import { createClient } from
+      "https://esm.sh/@supabase/supabase-js@2";
+
+    // Supabase project settings
+    const SUPABASE_URL =
+      "https://ftzkuufwkmovpxsgoyyc.supabase.co";
+
+    const SUPABASE_KEY =
+      "sb_publishable_vL21fcRB6rmSCn87Zhrptg_pC31ntX-";
+
+    const supabase = createClient(
+      SUPABASE_URL,
+      SUPABASE_KEY
+    );
+
+    const translations = {
+      en: {
+        subtitle: "Islamic Learning and Guidance",
+        chooseLanguage: "Choose Language:",
+        navHome: "Home",
+        navRegister: "Student Registration",
+        navQuran: "Qur'an Tafsir",
+        navHadith: "Hadith",
+        navAqeedah: "Aqeedah",
+        navBooks: "Islamic Books",
+        navMedia: "Audio/Video",
+        navContact: "Contact",
+        welcome: "Welcome to Markazus Sunnah Majen Wayya",
+        welcomeText: "Learn the Qur'an, authentic Sunnah, Islamic beliefs and beneficial knowledge.",
+        registrationTitle: "Student Registration",
+        registrationDescription: "Register with your full name, email address and password. You will receive an email if email confirmation is enabled.",
+        createAccount: "Create Student Account",
+        fullName: "Full Name",
+        namePlaceholder: "Enter your full name",
+        email: "Email Address",
+        password: "Password",
+        passwordPlaceholder: "At least 8 characters",
+        registerButton: "Register",
+        alreadyHaveAccount: "Already have an account?",
+        loginLink: "Login",
+        loginTitle: "Student Login",
+        loginButton: "Login",
+        needAccount: "Do not have an account?",
+        registerLink: "Register",
+        accountTitle: "Your Student Account",
+        studentName: "Name:",
+        loggedInMessage: "You are logged in successfully.",
+        logoutButton: "Logout",
+        quranTitle: "Qur'an Tafsir",
+        quranCard1: "Qur'an Recitation",
+        quranText1: "Learn to read the Holy Qur'an correctly.",
+        quranCard2: "Tafsir",
+        quranText2: "Study the meanings and explanations of Qur'anic verses.",
+        hadithTitle: "Hadith and Sunnah",
+        hadithText: "Study authentic Prophetic traditions and learn how to apply the Sunnah in everyday life.",
+        aqeedahTitle: "Aqeedah and Tawheed",
+        aqeedahText: "Learn the foundations of Islamic belief, Tawheed and the worship of Allah.",
+        booksTitle: "Islamic Books",
+        booksText: "Explore beneficial Islamic books covering Qur'an, Hadith, Fiqh, Islamic manners and knowledge.",
+        mediaTitle: "Audio and Video",
+        mediaText: "Audio lessons, Qur'an recitations and educational videos can be added here.",
+        contactTitle: "Contact Us",
+        addressLabel: "Address:",
+        address: "Majen Wayya, Charanchi LGA, Katsina State, Nigeria",
+        footerText: "Islamic Learning and Guidance",
+        signupSuccess: "Registration received. Check your email for a confirmation link if confirmation is required.",
+        loginSuccess: "You have logged in successfully.",
+        logoutSuccess: "You have logged out.",
+        logoutError: "Unable to log out. Please try again.",
+        missingName: "Please enter your full name.",
+        signupError: "Registration failed: ",
+        loginError: "Login failed: ",
+        networkError: "A connection error occurred. Check your internet and try again.",
+        working: "Please wait...",
+        confirmEmail: "Check your email and confirm your address before logging in, if email confirmation is enabled."
+      },
+
+      ha: {
+        subtitle: "Koyar da Addinin Musulunci da Shiryarwa",
+        chooseLanguage: "Zaɓi Harshe:",
+        navHome: "Gida",
+        navRegister: "Rajistar Ɗalibai",
+        navQuran: "Tafsirin Alƙur'ani",
+        navHadith: "Hadisi",
+        navAqeedah: "Aƙida",
+        navBooks: "Littattafan Musulunci",
+        navMedia: "Sauti/Bidiyo",
+        navContact: "Tuntuɓe Mu",
+        welcome: "Barka da zuwa Markazus Sunnah Majen Wayya",
+        welcomeText: "Koyi Alƙur'ani, ingantacciyar Sunnah, aƙidar Musulunci da ilimi mai amfani.",
+        registrationTitle: "Rajistar Ɗalibai",
+        registrationDescription: "Yi rajista da cikakken sunanka, adireshin email da kalmar sirri. Za ka samu saƙon email idan an kunna tabbatar da email.",
+        createAccount: "Ƙirƙiri Asusun Ɗalibi",
+        fullName: "Cikakken Suna",
+        namePlaceholder: "Shigar da cikakken sunanka",
+        email: "Adireshin Email",
+        password: "Kalmar Sirri",
+        passwordPlaceholder: "Aƙalla haruffa 8",
+        registerButton: "Yi Rajista",
+        alreadyHaveAccount: "Kana da asusu?",
+        loginLink: "Shiga",
+        loginTitle: "Shiga Asusun Ɗalibi",
+        loginButton: "Shiga",
+        needAccount: "Ba ka da asusu?",
+        registerLink: "Yi Rajista",
+        accountTitle: "Asusun Ɗalibinka",
+        studentName: "Suna:",
+        loggedInMessage: "Ka shiga asusunka cikin nasara.",
+        logoutButton: "Fita",
+        quranTitle: "Tafsirin Alƙur'ani",
+        quranCard1: "Karatun Alƙur'ani",
+        quranText1: "Koyi karanta Alƙur'ani Mai Girma daidai.",
+        quranCard2: "Tafsir",
+        quranText2: "Koyi ma'anoni da bayanin ayoyin Alƙur'ani.",
+        hadithTitle: "Hadisi da Sunnah",
+        hadithText: "Koyi ingantattun hadisai da yadda za a aiwatar da Sunnah a rayuwar yau da kullum.",
+        aqeedahTitle: "Aƙida da Tauhidi",
+        aqeedahText: "Koyi tushen aƙidar Musulunci, Tauhidi da bautar Allah.",
+        booksTitle: "Littattafan Musulunci",
+        booksText: "Binciki littattafan Alƙur'ani, Hadisi, Fiqhu, ɗabi'un Musulunci da sauran ilimi mai amfani.",
+        mediaTitle: "Sauti da Bidiyo",
+        mediaText: "Za a iya saka darussan sauti, karatun Alƙur'ani da bidiyoyin koyarwa a nan.",
+        contactTitle: "Tuntuɓe Mu",
+        addressLabel: "Adireshi:",
+        address: "Majen Wayya, Ƙaramar Hukumar Charanchi, Jihar Katsina, Najeriya",
+        footerText: "Koyar da Addinin Musulunci da Shiryarwa",
+        signupSuccess: "An karɓi rajistarka. Duba email ɗinka domin tabbatarwa idan ana buƙatar hakan.",
+        loginSuccess: "Ka shiga cikin nasara.",
+        logoutSuccess: "Ka fita daga asusunka.",
+        logoutError: "An kasa fita daga asusun. Sake gwadawa.",
+        missingName: "Da fatan za ka shigar da cikakken sunanka.",
+        signupError: "Rajista ta gaza: ",
+        loginError: "Shiga ya gaza: ",
+        networkError: "An samu matsalar haɗin intanet. Duba intanet ɗinka ka sake gwadawa.",
+        working: "A jira kaɗan...",
+        confirmEmail: "Duba email ɗinka ka tabbatar da adireshinka kafin shiga idan an kunna tabbatar da email."
+      },
+
+      ar: {
+        subtitle: "تعليم الإسلام والإرشاد",
+        chooseLanguage: "اختر اللغة:",
+        navHome: "الرئيسية",
+        navRegister: "تسجيل الطلاب",
+        navQuran: "تفسير القرآن",
+        navHadith: "الحديث",
+        navAqeedah: "العقيدة",
+        navBooks: "الكتب الإسلامية",
+        navMedia: "الصوت والفيديو",
+        navContact: "اتصل بنا",
+        welcome: "مرحبًا بكم في مركز السنة مجن ويا",
+        welcomeText: "تعلم القرآن والسنة الصحيحة والعقيدة الإسلامية والعلوم النافعة.",
+        registrationTitle: "تسجيل الطلاب",
+        registrationDescription: "سجل باسمك الكامل وبريدك الإلكتروني وكلمة المرور. ستصلك رسالة إذا كان تأكيد البريد الإلكتروني مفعّلًا.",
+        createAccount: "إنشاء حساب طالب",
+        fullName: "الاسم الكامل",
+        namePlaceholder: "أدخل اسمك الكامل",
+        email: "البريد الإلكتروني",
+        password: "كلمة المرور",
+        passwordPlaceholder: "ثمانية أحرف على الأقل",
+        registerButton: "تسجيل",
+        alreadyHaveAccount: "لديك حساب بالفعل؟",
+        loginLink: "تسجيل الدخول",
+        loginTitle: "دخول الطالب",
+        loginButton: "دخول",
+        needAccount: "ليس لديك حساب؟",
+        registerLink: "سجل الآن",
+        accountTitle: "حساب الطالب",
+        studentName: "الاسم:",
+        loggedInMessage: "تم تسجيل الدخول بنجاح.",
+        logoutButton: "تسجيل الخروج",
+        quranTitle: "تفسير القرآن",
+        quranCard1: "تلاوة القرآن",
+        quranText1: "تعلم قراءة القرآن الكريم قراءة صحيحة.",
+        quranCard2: "التفسير",
+        quranText2: "تعلم معاني الآيات القرآنية وتفسيرها.",
+        hadithTitle: "الحديث والسنة",
+        hadithText: "ادرس الأحاديث النبوية الصحيحة وتعلم تطبيق السنة في الحياة اليومية.",
+        aqeedahTitle: "العقيدة والتوحيد",
+        aqeedahText: "تعلم أصول العقيدة الإسلامية والتوحيد وعبادة الله.",
+        booksTitle: "الكتب الإسلامية",
+        booksText: "اكتشف الكتب النافعة في القرآن والحديث والفقه والآداب الإسلامية.",
+        mediaTitle: "الصوت والفيديو",
+        mediaText: "يمكن إضافة الدروس الصوتية وتلاوات القرآن ومقاطع الفيديو التعليمية هنا.",
+        contactTitle: "اتصل بنا",
+        addressLabel: "العنوان:",
+        address: "ماجن ويا، منطقة شارانتشي، ولاية كاتسينا، نيجيريا",
+        footerText: "تعليم الإسلام والإرشاد",
+        signupSuccess: "تم استلام التسجيل. تحقق من بريدك الإلكتروني للتأكيد إذا كان مطلوبًا.",
+        loginSuccess: "تم تسجيل الدخول بنجاح.",
+        logoutSuccess: "تم تسجيل الخروج.",
+        logoutError: "تعذر تسجيل الخروج. حاول مرة أخرى.",
+        missingName: "يرجى إدخال اسمك الكامل.",
+        signupError: "فشل التسجيل: ",
+        loginError: "فشل تسجيل الدخول: ",
+        networkError: "حدث خطأ في الاتصال. تحقق من الإنترنت وحاول مرة أخرى.",
+        working: "يرجى الانتظار...",
+        confirmEmail: "تحقق من بريدك الإلكتروني وأكد عنوانك قبل تسجيل الدخول إذا كان التأكيد مفعّلًا."
+      }
+    };
+
+    const languageSelect = document.getElementById("language");
+    const authMessage = document.getElementById("authMessage");
+    const accountMessage = document.getElementById("accountMessage");
+
+    function currentLanguage() {
+      return languageSelect.value || "en";
+    }
+
+    function t(key) {
+      const lang = currentLanguage();
+      return translations[lang]?.[key] || translations.en[key] || key;
+    }
+
+    function translatePage(language) {
+      const lang = translations[language] ? language : "en";
+
+      document.documentElement.lang = lang;
+      document.documentElement.dir = lang === "ar" ? "rtl" : "ltr";
+      document.body.dir = lang === "ar" ? "rtl" : "ltr";
+
+      document.querySelectorAll("[data-i18n]").forEach((element) => {
+        const key = element.getAttribute("data-i18n");
+        const value = translations[lang][key];
+
+        if (value) {
+          element.textContent = value;
+        }
+      });
+
+      document.querySelectorAll("[data-i18n-placeholder]").forEach((element) => {
+        const key = element.getAttribute("data-i18n-placeholder");
+        const value = translations[lang][key];
+
+        if (value) {
+          element.placeholder = value;
+        }
+      });
+    }
+
+    languageSelect.addEventListener("change", () => {
+      const language = languageSelect.value;
+      localStorage.setItem("markazLanguage", language);
+      translatePage(language);
+    });
+
+    const savedLanguage = localStorage.getItem("markazLanguage");
+
+    if (savedLanguage && translations[savedLanguage]) {
+      languageSelect.value = savedLanguage;
+    }
+
+    translatePage(languageSelect.value);
+
+    document.getElementById("year").textContent =
+      new Date().getFullYear();
+
+    function showMessage(element, message, type) {
+      element.textContent = message;
+      element.className = "message " + type;
+    }
+
+    function clearMessage(element) {
+      element.textContent = "";
+      element.className = "message";
+    }
+
+    function showSignupForm() {
+      document.getElementById("signupForm").classList.remove("hidden");
+      document.getElementById("loginForm").classList.add("hidden");
+      clearMessage(authMessage);
+    }
+
+    function showLoginForm() {
+      document.getElementById("loginForm").classList.remove("hidden");
+      document.getElementById("signupForm").classList.add("hidden");
+      clearMessage(authMessage);
+    }
+
+    document.getElementById("showLogin").addEventListener(
+      "click",
+      showLoginForm
+    );
+
+    document.getElementById("showSignup").addEventListener(
+      "click",
+      showSignupForm
+    );
+
+    function updateAccount(user) {
+      const authForms = document.getElementById("authForms");
+      const accountPanel = document.getElementById("accountPanel");
+
+      if (user) {
+        authForms.classList.add("hidden");
+        accountPanel.classList.remove("hidden");
+
+        const fullName =
+          user.user_metadata?.full_name ||
+          user.user_metadata?.name ||
+          "";
+
+        document.getElementById("accountName").textContent =
+          fullName || "—";
+
+        document.getElementById("accountEmail").textContent =
+          user.email || "";
+      } else {
+        accountPanel.classList.add("hidden");
+        authForms.classList.remove("hidden");
+      }
+    }
+
+    // Student registration
+    document.getElementById("signupForm").addEventListener(
+      "submit",
+      async (event) => {
+        event.preventDefault();
+        clearMessage(authMessage);
+
+        const fullName =
+          document.getElementById("fullName").value.trim();
+
+        const email =
+          document.getElementById("signupEmail").value.trim();
+
+        const password =
+          document.getElementById("signupPassword").value;
+
+        if (!fullName) {
+          showMessage(authMessage, t("missingName"), "error");
+          return;
+        }
+
+        const button = document.getElementById("signupButton");
+        button.disabled = true;
+        button.textContent = t("working");
+
+        try {
+          const { data, error } = await supabase.auth.signUp({
+            email,
+            password,
+            options: {
+              data: {
+                full_name: fullName
+              }
+            }
+          });
+
+          if (error) {
+            throw error;
+          }
+
+          if (data.session && data.user) {
+            updateAccount(data.user);
+            showMessage(
+              accountMessage,
+              t("signupSuccess"),
+              "success"
+            );
+          } else {
+            showMessage(
+              authMessage,
+              t("signupSuccess") + " " + t("confirmEmail"),
+              "success"
+            );
+          }
+
+          document.getElementById("signupPassword").value = "";
+        } catch (error) {
+          showMessage(
+            authMessage,
+            t("signupError") + (error.message || t("networkError")),
+            "error"
+          );
+        } finally {
+          button.disabled = false;
+          button.textContent = t("registerButton");
+        }
+      }
+    );
+
+    // Student login
+    document.getElementById("loginForm").addEventListener(
+      "submit",
+      async (event) => {
+        event.preventDefault();
+        clearMessage(authMessage);
+
+        const email =
+          document.getElementById("loginEmail").value.trim();
+
+        const password =
+          document.getElementById("loginPassword").value;
+
+        const button = document.getElementById("loginButton");
+        button.disabled = true;
+        button.textContent = t("working");
+
+        try {
+          const { data, error } =
+            await supabase.auth.signInWithPassword({
+              email,
+              password
+            });
+
+          if (error) {
+            throw error;
+          }
+
+          updateAccount(data.user);
+
+          showMessage(
+            accountMessage,
+            t("loginSuccess"),
+            "success"
+          );
+
+          document.getElementById("loginPassword").value = "";
+        } catch (error) {
+          showMessage(
+            authMessage,
+            t("loginError") + (error.message || t("networkError")),
+            "error"
+          );
+        } finally {
+          button.disabled = false;
+          button.textContent = t("loginButton");
+        }
+      }
+    );
+
+    // Student logout
+    document.getElementById("logoutButton").addEventListener(
+      "click",
+      async () => {
+        clearMessage(accountMessage);
+
+        try {
+          const { error } = await supabase.auth.signOut();
+
+          if (error) {
+            throw error;
+          }
+
+          updateAccount(null);
+          showSignupForm();
+
+          showMessage(
+            authMessage,
+            t("logoutSuccess"),
+            "success"
+          );
+        } catch (error) {
+          showMessage(
+            accountMessage,
+            t("logoutError"),
+            "error"
+          );
+        }
+      }
+    );
+
+    // Restore login status when the page is opened
+    try {
+      const { data, error } = await supabase.auth.getSession();
+
+      if (error) {
+        throw error;
+      }
+
+      updateAccount(data.session?.user || null);
+    } catch (error) {
+      showMessage(
+        authMessage,
+        t("networkError"),
+        "error"
+      );
+    }
+
+    // Keep the page updated when the authentication state changes
+    supabase.auth.onAuthStateChange((_event, session) => {
+      updateAccount(session?.user || null);
+    });
+  </script>
 
 </body>
-</html>
+              </html>
